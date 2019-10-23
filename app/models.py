@@ -18,3 +18,9 @@ class Pitches(db.model):
     id = db.Column(db.Integer,primary_key = True)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
+class PitchCategory(db.model):
+    __tablename__ = 'pitchcategory'
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(255))
+    description =db.Column(db.String(255))
+
