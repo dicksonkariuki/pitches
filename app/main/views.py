@@ -32,5 +32,21 @@ def new_pitch(id):
         return redirect(url_for('.category', id=category.id))
 
     return render_template('new_pitch.html', pitch_form=form, category=category)
+# Routes for displaying the different pitches
+
+
+@main.route('/category/<int:id>')
+def category(id):
+    '''
+    category route function returns a list of pitches in the category chosen
+    '''
+
+    category = PitchCategory.query.get(id)
+
+    if category is None:
+        abort(404)
+
+    pitches = Pitches.get_pitches(id)
+    return render_template('category.html', category=category, pitches=pitches)
 
 
