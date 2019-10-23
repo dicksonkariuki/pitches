@@ -11,4 +11,10 @@ class Comment(db.model):
     id = db.Column(db.Integer,primary_key = True)
     user_id =db.Column(db.Integer,db.ForeignKey("users.id"))
     comment_id = db.Column(db.Integer(255))
-    
+     
+
+class Pitches(db.model):
+    __tablename__ = 'pitches'
+    id = db.Column(db.Integer,primary_key = True)
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
