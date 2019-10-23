@@ -1,29 +1,37 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+
 class Config:
-    """
-    General configuration parent class
-    """
-    SQLALCHEMY_DATABASE_URI = os.environ.get("SSQLALCHEMY_DATABASE_URI")
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:dickson@localhost/pitch'
-    SECRET_KEY =os.environ..get("SECRET_KEY")
+  """
+  configuration classes
+  """
+
+  SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+  SECRET_KEY = os.environ.get('SECRET_KEY')
+  UPLOADS_DEFAULT_DEST = 'app/static/photos/photos'
+  MAIL_SERVER = 'smtp.gmail.com'
+  MAIL_PORT = 465
+  MAIL_USE_TLS = False
+  MAIL_USE_SSL = True
+  MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+  MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 
 
+class Development(Config):
+  """
+  development
+  """
+  DEBUG=True
 
-class ProdConfig(Config):
-    """
-    Production configuration child class
-    args:
-        Config:The parent configuration class with general configuration settings
-    """
-    pass
-class DevConfig(Config):
-    """
-    Development configuration class 
-    args:
-        Config:parent configuration class that contains general configuration settings
-    """
-    DEBUG = True
+class Production(Config):
+  """
+  production
+  """
+  SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
-    config_options = {
-        'development':DevConfig,
-        'production':ProdConfig
-    }
+configurations = {
+                 "Development":Development,
+                 "Production":Production
+                  }

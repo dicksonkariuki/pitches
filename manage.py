@@ -1,14 +1,26 @@
 from app import create_app,db
-from app.models import User,Comment,Pitches,PitchCategory
 from flask_script import Manager,Server
+from app.models import User,Pitch
+from flask_migrate import Migrate,MigrateCommand
 
-app = create_app('development')
 
+app = create_app('Production')
+
+
+migrate = Migrate(app,db)
 manager = Manager(app)
+manager.add_command('runserver',Server)
+manager.add_command('db',MigrateCommand)
 
 @manager.shell
-def make_shell_context():
-    return dict(app = app,db = db,User = User )
+def add_shell():
+  return{"db":db,"User":User,"Pitch":Pitch}
 
-if __name__ == '__main__':
-    manager.run()
+@manager.command
+def test():
+  import unittest
+  tests = unittest.TestLoader().discover('tests')
+  unittest.TextTestResult(verbosity=5).run(tests)
+
+if __name__=='__main__':
+  manager.run()
