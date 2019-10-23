@@ -2,6 +2,9 @@ class Config:
     """
     General configuration parent class
     """
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:dickson@localhost/pitch'
+
+
 class ProdConfig(Config):
     """
     Production configuration child class
