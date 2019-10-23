@@ -1,0 +1,15 @@
+body{
+    background-image: url('../photos/photos/think.jpg');
+    background-size: cover;
+  }
+  .tagline{
+    color: aliceblue;
+    padding-top: 160px;
+    font-weight: bold;
+  }
+  .pitch{
+    color: darkkhaki;
+    text-align: left;
+    font-weight: bold;  
+  }
+  
