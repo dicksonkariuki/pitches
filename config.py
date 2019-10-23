@@ -2,7 +2,10 @@ class Config:
     """
     General configuration parent class
     """
+    SQLALCHEMY_DATABASE_URI = os.environ.get("SSQLALCHEMY_DATABASE_URI")
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:dickson@localhost/pitch'
+    SECRET_KEY =os.environ..get("SECRET_KEY")
+
 
 
 class ProdConfig(Config):
@@ -19,3 +22,8 @@ class DevConfig(Config):
         Config:parent configuration class that contains general configuration settings
     """
     DEBUG = True
+
+    config_options = {
+        'development':DevConfig,
+        'production':ProdConfig
+    }
