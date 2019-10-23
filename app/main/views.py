@@ -12,6 +12,7 @@ def index():
     title = 'Home- Welcome to the Pitch Website'
     categories = PitchCategory.get_categories()
     return render_template('index.html', title=title, categories=categories)
+
 @main.route('/category/pitch/new/<int:id>', methods=['GET', 'POST'])
 @login_required
 def new_pitch(id):
@@ -48,7 +49,7 @@ def category(id):
 
     pitches = Pitches.get_pitches(id)
     return render_template('category.html', category=category, pitches=pitches)
-    
+
 @main.route('/pitch/<int:id>', methods=['GET', 'POST'])
 @login_required
 def single_pitch(id):
@@ -63,5 +64,16 @@ def single_pitch(id):
 
     comment = Comments.get_comments(id)
     return render_template('pitch.html', pitches=pitches, comment=comment)
+
+# Routes for user authentication
+@main.route('/user/<uname>')
+@login_required
+def profile(uname):
+    user = User.query.filter_by(username=uname).first()
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user=user)
 
 
