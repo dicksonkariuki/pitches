@@ -6,3 +6,9 @@ class User(db.model):
 
     def __repr__(self):
         return f'User {self.username}'
+class Comment(db.model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer,primary_key = True)
+    user_id =db.Column(db.Integer,db.ForeignKey("users.id"))
+    comment_id = db.Column(db.Integer(255))
+    
