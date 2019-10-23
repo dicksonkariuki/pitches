@@ -1,0 +1,14 @@
+body{
+    background-image: url('../photos/photos/lock.jpg');
+    background-size: cover;
+    color: wheat;
+    opacity: .7;
+    font-family: 'Squada One', cursive;
+  }
+  .container{
+    padding-top: 70px;
+  }
+  .col-md-6 {
+    background-color: #25283D;
+  }
+  
