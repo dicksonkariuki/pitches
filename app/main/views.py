@@ -48,5 +48,20 @@ def category(id):
 
     pitches = Pitches.get_pitches(id)
     return render_template('category.html', category=category, pitches=pitches)
+    
+@main.route('/pitch/<int:id>', methods=['GET', 'POST'])
+@login_required
+def single_pitch(id):
+    '''
+    Function the returns a single pitch for comment to be added
+    '''
+
+    pitches = Pitches.query.get(id)
+
+    if pitches is None:
+        abort(404)
+
+    comment = Comments.get_comments(id)
+    return render_template('pitch.html', pitches=pitches, comment=comment)
 
 
