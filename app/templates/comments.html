@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename = 'css/comment.css')}}">
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header">
+          <hr>
+          <h3>Category : {{pitch.category}} ({{pitch.title}})</h3>
+          <hr>
+          <h5 style="text-decoration: underline">Pitch</h5>
+          <p>{{pitch.the_pitch}}</p> 
+          <hr>
+          <p>Posted by {{pitch.pitch.username}} on {{pitch.date_posted.strftime('%Y-%m-%d')}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="container">
+      {% for comm in comment %}
+        <div class="row">
+          <hr>
+           <p><img src="../static/photos/photos/{{comm.author.user_profile_pic_path}}" alt="pic"class="rounded-circle card-image the_image" width="20%" height="50%"> {{comm.author.username}} </p>
+           <p> {{comm.the_comment}} </p>
+           <p>Posted on {{comm.date_posted.strftime('%Y-%m-%d')}}</p>
+        </div>
+      {% endfor %}user_profile_pic_path
+    </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+{% endblock %}
+
