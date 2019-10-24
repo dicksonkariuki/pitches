@@ -1,15 +1,12 @@
-body{
-    background-image: url('../photos/photos/think.jpg');
-    background-size: cover;
-  }
-  .tagline{
-    color: aliceblue;
-    padding-top: 160px;
-    font-weight: bold;
-  }
-  .pitch{
-    color: darkkhaki;
-    text-align: left;
-    font-weight: bold;  
-  }
-  
+body {
+  background-image: url("../photos/photos/me.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.tagline {
+  color: darkslateblue;
+  padding-top: 160px;
+  font-weight: bold;
+
+}
+

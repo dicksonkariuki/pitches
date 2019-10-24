@@ -17,6 +17,8 @@ photos = UploadSet('photos',IMAGES)
 mail = Mail(app)
 
 
+
+
 def create_app(config_name):
   app.config.from_object(configurations[config_name])
 

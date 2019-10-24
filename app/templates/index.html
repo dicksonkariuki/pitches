@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block styles %}
-  {{ super() }}
-  <link rel="stylesheet" href="{{url_for('static',filename = 'css/index.css')}}">
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/index.css')}}">
 {% endblock %}
 
 {% block content %}
@@ -11,14 +11,12 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-4">
-      <h2 class="tagline">Welcome to pitches</h2>
-      <p class="pitch"> <em>
-      Users can read other users pitches, leave comments on specified pitches and also vote on the pitches </em></p>
+      <h2 class="tagline">Welcome to the one-minute pitching website</h2>
       <!-- <button type="button" class="btn btn-outline-info">Sign up</button>
       <button type="button" class="btn btn-outline-info">Login</button> -->
-      <a href="{{url_for('auth.login')}}"   class="btn btn-primary streched-link">Login</a>
-      <a href="{{url_for('auth.signup')}}"  class="btn btn-primary streched-link">Sign up</a>
+      <a href="{{url_for('auth.login')}}" class="btn btn-primary streched-link">Login</a>
+      <a href="{{url_for('auth.signup')}}" class="btn btn-primary streched-link">Sign up</a>
     </div>
   </div>
-</div>  
+</div>
 {% endblock %}

@@ -1,9 +1,11 @@
-body{
-    background-image: url('../photos/photos/nhome.jpg');
-    background-attachment: fixed;
-  }
-  .head{
-    text-align: center;
-    font-weight: bold;
-  }
+body {
+  background-image: url("../photos/photos/me.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
+}
+.head {
+  text-align: center;
+  font-weight: bold;
+}

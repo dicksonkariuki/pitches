@@ -10,6 +10,7 @@ class Config:
 
   SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
   SECRET_KEY = os.environ.get('SECRET_KEY')
+  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:kariuki@localhost/pitch'
   UPLOADS_DEFAULT_DEST = 'app/static/photos/photos'
   MAIL_SERVER = 'smtp.gmail.com'
   MAIL_PORT = 465
@@ -17,7 +18,7 @@ class Config:
   MAIL_USE_SSL = True
   MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
   MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-
+  SECRET_KEY = os.urandom(32)
 
 class Development(Config):
   """

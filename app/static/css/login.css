@@ -1,6 +1,7 @@
 body{
-    background-image: url('../photos/photos/lock.jpg');
+    background-image: url('../photos/photos/vate.jpeg');
     background-size: cover;
+    background-repeat: no-repeat;
     color: wheat;
     opacity: .7;
     font-family: 'Squada One', cursive;
