@@ -12,26 +12,26 @@ You can find the site at :https://pitchsite.herokuapp.com/
 | UPload user profile photo | user selects a photo    |   A user's photo is displayed on the profile page |
 
 ### Setup/Installation requirements
-Ensure that python 3.6 is installed on your machine 
-You can fork the repository or clone the project on your machine.
-Register the secret key as an environment variable  in the terminal as follows:
+* Ensure that python 3.6 is installed on your machine 
+* You can fork the repository or clone the project on your machine.
+* Register the secret key as an environment variable  in the terminal as follows:
 
-export SECRET_KEY=<your-secret-key>
+export SECRET_KEY=<>
 
-Run the application in your machine using the following command:
+* Run the application in your machine using the following command:
 
-Python3.6 manage.py server
+* Python3.6 manage.py server
 
-Install all the dependices necessary for the application to run.
+* Install all the dependices necessary for the application to run.
 
-Ensure that you run the application in the virtual environment to avoid conflicts.
+* Ensure that you run the application in the virtual environment to avoid conflicts.
 
-###Technologies used
-1.Python version3.6
-2.Flask 
-3.Bootsrap
-4.HTML
-5.CSS
+### Technologies used
+* Python version3.6
+* Flask 
+* Bootsrap
+* HTML
+* CSS
 ### Known bugs
 There are no known bugs as at now if any you can contact me at dicksonkariuki4@gmail.com
 ### Licence 
