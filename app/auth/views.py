@@ -10,18 +10,13 @@ from flask_mail import Message
 @auth.route('/login',methods = ["GET","POST"])
 def login():
   login_form = LoginForm()
+
   if login_form.validate_on_submit():
     user = User.query.filter_by(email = login_form.email.data).first()
     if user is not None and user.verify_password(login_form.password.data):
       login_user(user,login_form.remember_me.data)
-      try:
-        msg = Message('Hello...Welcome to pitches',sender='denismugendinjue9@gmail.com')
-        msg.add_recipient(user.email)
-        mail.send(msg)
-      except Exception as e:
-        print('failed')
       return redirect(request.args.get('next') or url_for('main.home'))
-    flash('invalid user')
+      flash('Invalid user')
   return render_template('login.html',loginF = login_form)
 
 @auth.route('/signup',methods = ["GET","POST"])

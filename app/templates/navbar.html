@@ -1,19 +1,20 @@
-<nav class="navbar navbar-inverse ">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{url_for('main.index')}}">Home</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li ><a href="{{url_for('main.home')}}">Pitches</a></li>
-        <li><a href="{{url_for('auth.signup')}}">signup</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {% if current_user.is_authenticated %}
-        <li><a href="{{url_for('main.profile',the_user=current_user.username)}}">{{current_user.username}} Profile</a></li>
-        <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-        {% else %}
-        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-        {%endif%}
-        </ul>
+<nav class="navbar navbar-dark bg-danger ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{url_for('main.index')}}">Home</a>
     </div>
-  </nav>
+    <ul class="nav navbar-nav">
+      <li><a href="{{url_for('main.home')}}">Pitches</a></li>
+      <li><a href="{{url_for('auth.signup')}}">signup</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if current_user.is_authenticated %}
+      <li><a href="{{url_for('main.profile',the_user=current_user.username)}}">{{current_user.username}} Profile</a>
+      </li>
+      <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+      {% else %}
+      <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+      {%endif%}
+    </ul>
+  </div>
+</nav>

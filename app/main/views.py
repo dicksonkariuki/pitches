@@ -59,7 +59,7 @@ def update_pic(the_user):
     path = f'photos/{filename}'
     user.user_profile_pic_path = path
     db.session.commit()
-  return redirect(url_for('.profile',the_user = the_user))
+  return redirect(url_for('.profile',the_user=current_user))
 
 
 @main.route('/post/<int:pitch_id>',methods = ["POST"])
@@ -68,7 +68,7 @@ def delete(pitch_id):
   delete = Pitch.query.get(pitch_id)
   if delete.pitch != current_user:
     flash('Cannot delete other users pitches')
-    return redirect(url_for('main.home'))
+    return redirect(url_for('main.home')) 
   delete.delete()
   return redirect(url_for('main.home'))
 
