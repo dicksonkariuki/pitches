@@ -18,14 +18,14 @@ class Config:
   MAIL_USE_SSL = True
   MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
   MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-  SECRET_KEY = os.urandom(32)
+  # SECRET_KEY = os.urandom(32)
 
 class Development(Config):
   """
   development
   """
   # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:kariuki@localhost/pitch/'
+  # SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:kariuki@localhost/pitch/'
   DEBUG=True
 
 class Production(Config):
